@@ -1,16 +1,17 @@
-# fast-lircd-websocket-bridge a websocket to lirc daemon socket bridge
+# LIRC daemon controll webinterface using WebSockets
 
-Needs python 3.4 (or 3.3 with asyncio lib), uwsgi and lirc daemon running somewhere.
+With this you can send mute, volume up or volume down commands to lirc daemon 
+from every where.
 
-`lircd_socket` variable in `config.ini` is the address to lircd socket
+# How to run
 
-this project can be started with this command:
+you need uwsgi and python3 with asyncio
 
-    uwsgi --ini config.ini:dev
-    
-and when its running you should be abel to open http://localhost:9090/ in your
-browser and send some command to lirc daemon
-
-
-## this code has pretty much no error checking and will fall into pieces quite easily
-
+ 1. git clone this
+ 2. create virtualenv `pyvenv venv` and activate it `source venv/bin/activate`
+ 3. install flask `pip install flask`
+ 4. start websocket daemon `uwsgi --ini config.ini:ws-serv`
+ 5. start flask website `uwsgi --ini config.ini:web-dev`
+ 6. open http://localhost:8080/
+ 
+`lircd_socket` variable in `config.ini` controlls where the lirc daemon is
