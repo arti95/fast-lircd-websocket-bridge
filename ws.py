@@ -43,6 +43,7 @@ def application(env, sr):
             s.send(value+"\\n");
         }
         function sendcmd(cmd) {
+            console.log("sending command "+cmd)
             s.send("SEND_ONCE cd "+cmd+"\\n")
         }
       </script>
