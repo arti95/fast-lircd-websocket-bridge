@@ -1,4 +1,4 @@
-# fast-lirc a websocket to lirc daemon socket bridge
+# fast-lircd-websocket-bridge a websocket to lirc daemon socket bridge
 
 Needs python 3.4 (or 3.3 with asyncio lib), uwsgi and lirc daemon running somewhere.
 
